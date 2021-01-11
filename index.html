@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html ng-app='ControllerAsApp'>
+<head>
+    <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.0/angular.min.js"></script>
+    <script src="app.js"></script>
+    <title>Екзаменаційна робота</title>
+</head>
+<body>
+<div id="list1" ng-controller='AvtoListController1 as list1'>
+    <h3>Автомобілі:</h3>
+    <div ng-if="list1.item.length === 0">
+        Всі авто є прихованими або видаленими.
+    </div>
+    <ol>
+        <li ng-repeat="item in list1.item">
+            {{item.name}}({{item.quantity}})
+            <button ng-click="list1.removeItem($index);">Видалити</button>
+            
+        </li>
+    </ol>
+</div>
+</body>
+</html>
